@@ -1,0 +1,29 @@
+From 5c3fed2e96ef9d8c6a5d7242bf1d6b9a522a3db6 Mon Sep 17 00:00:00 2001
+From: tisenu100 <tisenu100@github.com>
+Date: Wed, 15 Jan 2025 22:34:22 +0300
+Subject: [PATCH] Fake Device Image Handler
+
+---
+ .../aboutphone/deviceimage/DeviceImageManager.smali         | 6 +-----
+ 1 file changed, 1 insertion(+), 5 deletions(-)
+
+diff --git a/smali_classes4/com/samsung/android/settings/deviceinfo/aboutphone/deviceimage/DeviceImageManager.smali b/smali_classes4/com/samsung/android/settings/deviceinfo/aboutphone/deviceimage/DeviceImageManager.smali
+index 2ceee56..050fb2e 100644
+--- a/smali_classes4/com/samsung/android/settings/deviceinfo/aboutphone/deviceimage/DeviceImageManager.smali
++++ b/smali_classes4/com/samsung/android/settings/deviceinfo/aboutphone/deviceimage/DeviceImageManager.smali
+@@ -442,11 +442,7 @@
+ 
+     if-eqz v0, :cond_0
+ 
+-    const-string/jumbo v0, "ril.product_code"
+-
+-    invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
++    const-string/jumbo v0, "SM-S911BZKBTUR"
+ 
+     new-instance v2, Ljava/lang/StringBuilder;
+ 
+-- 
+2.48.1
+
