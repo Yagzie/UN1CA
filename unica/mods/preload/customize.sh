@@ -20,10 +20,23 @@ DOWNLOAD_APK()
 
 # Samsung Internet Browser
 # https://play.google.com/store/apps/details?id=com.sec.android.app.sbrowser
-if [[ "$TARGET_CODENAME" != "a71" ]]; then
-    DOWNLOAD_APK "$(GET_GALAXY_STORE_DOWNLOAD_URL "com.sec.android.app.sbrowser")" \
-        "SBrowser/SBrowser.apk"
-fi
+DOWNLOAD_APK "$(GET_GALAXY_STORE_DOWNLOAD_URL "com.sec.android.app.sbrowser")" \
+    "SBrowser/SBrowser.apk"
+
+# Samsung Calculator
+# https://play.google.com/store/apps/details?id=com.sec.android.app.popupcalculator
+DOWNLOAD_APK "$(GET_GALAXY_STORE_DOWNLOAD_URL "com.sec.android.app.popupcalculator")" \
+    "Calculator/Calculator.apk"
+
+# Samsung Calendar
+# https://play.google.com/store/apps/details?id=com.samsung.android.calendar
+DOWNLOAD_APK "$(GET_GALAXY_STORE_DOWNLOAD_URL "com.samsung.android.calendar")" \
+    "Calendar/Calendar.apk"
+
+# Samsung Clock
+# https://play.google.com/store/apps/details?id=com.sec.android.app.clockpackage
+DOWNLOAD_APK "$(GET_GALAXY_STORE_DOWNLOAD_URL "com.sec.android.app.clockpackage")" \
+    "Clock/Clock.apk"
 
 sed -i "/system\/preload/d" "$WORK_DIR/configs/fs_config-system" \
     && sed -i "/system\/preload/d" "$WORK_DIR/configs/file_context-system"
