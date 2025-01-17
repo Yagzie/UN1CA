@@ -67,6 +67,7 @@ system/app/FactoryAirCommandManager
 system/app/FactoryCameraFB
 system/app/FBAppManager_NS
 system/app/HMT
+system/app/KidsHome_Installer
 system/app/MoccaMobile
 system/app/PlayAutoInstallConfig
 system/app/SamsungCalendar
@@ -132,7 +133,10 @@ system/priv-app/FacAtFunction
 system/priv-app/FactoryTestProvider
 system/priv-app/FotaAgent
 system/priv-app/GameHome
+system/priv-app/GameOptimizingService
+system/priv-app/GameTools_Dream
 system/priv-app/ModemServiceMode
+system/priv-app/OMCAgent5
 system/priv-app/OneDrive_Samsung_v3
 system/priv-app/PaymentFramework
 system/priv-app/SEMFactoryApp
