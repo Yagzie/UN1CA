@@ -18,11 +18,6 @@ DOWNLOAD_APK()
 }
 # ]
 
-# Samsung Internet Browser
-# https://play.google.com/store/apps/details?id=com.sec.android.app.sbrowser
-DOWNLOAD_APK "$(GET_GALAXY_STORE_DOWNLOAD_URL "com.sec.android.app.sbrowser")" \
-    "SBrowser/SBrowser.apk"
-
 # Samsung Calculator
 # https://play.google.com/store/apps/details?id=com.sec.android.app.popupcalculator
 DOWNLOAD_APK "$(GET_GALAXY_STORE_DOWNLOAD_URL "com.sec.android.app.popupcalculator")" \
