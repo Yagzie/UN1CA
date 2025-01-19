@@ -2,10 +2,14 @@ name: Build
 
 on:
   workflow_dispatch:
-  pull_request:
-  push:
-    branches:
-      - 'fourteen'
+    inputs:
+      upload:
+        required: true
+        default: 'no'
+        type: choice
+        options:
+        - yes
+        - no
 
 jobs:
   build:
@@ -14,7 +18,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: [a52q, a52sxq, a52xq, a71, a72q, a73xq, b0q, dm1q, dm2q, dm3q, g0q, m52xq, r0q, r8q, r9q, r9q2]
+        target: [m52xq]
 
     steps:
       - name: Checkout repo
@@ -38,8 +42,10 @@ jobs:
           sudo modprobe erofs f2fs
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          echo -n "${{ secrets.PLATFORM_KEY_PK8 }}" | base64 --decode > unica/security/unica_platform.pk8
-          echo -n "${{ secrets.PLATFORM_KEY_PEM }}" | base64 --decode > unica/security/unica_platform.x509.pem
+          mkdir -p ~/.ssh
+          echo -n "${{ secrets.SSH_KEY }}" | base64 --decode > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -t ed25519 frs.sourceforge.net >> ~/.ssh/known_hosts
 
       - name: Set up JDK 11
         uses: actions/setup-java@v4
@@ -70,4 +76,9 @@ jobs:
       - name: Build ROM
         run: |
           source ./buildenv.sh ${{ matrix.target }}
-          ./scripts/make_rom.sh --no-rom-zip --no-rom-tar
+          ./scripts/make_rom.sh --no-rom-tar
+
+      - name: Upload ZIP
+        if: github.event.inputs.upload == 'true'
+        run: |
+          scp out/UN1CA*.zip yagzie@frs.sourceforge.net:/home/frs/project/un1ca/
