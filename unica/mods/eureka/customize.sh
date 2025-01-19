@@ -28,15 +28,17 @@ REMOVE_FROM_WORK_DIR "$WORK_DIR/system/system/media/audio/ringtones/SoundTheme/C
 REMOVE_FROM_WORK_DIR "$WORK_DIR/system/system/media/audio/ringtones/SoundTheme/Fun/ACH_The_Voyage_EDM.ogg"
 REMOVE_FROM_WORK_DIR "$WORK_DIR/system/system/media/audio/ringtones/SoundTheme/Fun/ACH_The_Voyage_RnB.ogg"
 REMOVE_FROM_WORK_DIR "$WORK_DIR/system/system/media/audio/ringtones/SoundTheme/Fun/ACH_The_Voyage_jazz_piano.ogg"
-REMOVE_FROM_WORK_DIR "$WORK_DIR/system/system/media/audio/ringtones/SoundTheme/Galaxy/ACH_Over_the_Horizon.ogg"
 REMOVE_FROM_WORK_DIR "$WORK_DIR/system/system/media/audio/ringtones/SoundTheme/Retro/ACH_The_Voyage_pop_remix.ogg"
 REMOVE_FROM_WORK_DIR "$WORK_DIR/system/system/media/audio/ringtones/SoundTheme/Retro/ACH_The_Voyage_smooth_remix.ogg"
+REMOVE_FROM_WORK_DIR "$WORK_DIR/system/system/media/audio/ringtones/SoundTheme/Galaxy/ACH_Over_the_Horizon_2022_produced_by_SUGA_of_BTS.ogg"
+REMOVE_FROM_WORK_DIR "$WORK_DIR/system/system/media/audio/ringtones/SoundTheme/Galaxy/ACH_Over_the_Horizon_by_SUGA_of_BTS.ogg"
 
 if ! grep -q "EnvironmentAdaptiveDisplay" "$WORK_DIR/configs/file_context-system"; then
     {
         echo "/system/etc/permissions/privapp-permissions-com\.samsung\.android\.sead\.xml u:object_r:system_file:s0"
         echo "/system/etc/permissions/privapp-permissions-com\.samsung\.android\.wallpaper\.live\.xml u:object_r:system_file:s0"
-        echo "/system/media/audio/ringtones/SoundTheme/Galaxy/ACH_Over_the_Horizon_2024\.ogg u:object_r:system_file:s0"
+        echo "/system/media/audio/ringtones/SoundTheme/Galaxy/ACH_Morning_Flower\.ogg u:object_r:system_file:s0"
+        echo "/system/media/audio/ringtones/SoundTheme/Galaxy/ACH_Morning_Glory\.ogg u:object_r:system_file:s0"
         echo "/system/priv-app/EnvironmentAdaptiveDisplay u:object_r:system_file:s0"
         echo "/system/priv-app/EnvironmentAdaptiveDisplay/EnvironmentAdaptiveDisplay\.apk u:object_r:system_file:s0"
         echo "/system/priv-app/SpriteWallpaper u:object_r:system_file:s0"
@@ -47,7 +49,8 @@ if ! grep -q "EnvironmentAdaptiveDisplay" "$WORK_DIR/configs/fs_config-system"; 
     {
         echo "system/etc/permissions/privapp-permissions-com.samsung.android.sead.xml 0 0 644 capabilities=0x0"
         echo "system/etc/permissions/privapp-permissions-com.samsung.android.wallpaper.live.xml 0 0 644 capabilities=0x0"
-        echo "system/media/audio/ringtones/SoundTheme/Galaxy/ACH_Over_the_Horizon_2024.ogg 0 0 644 capabilities=0x0"
+        echo "system/media/audio/ringtones/SoundTheme/Galaxy/ACH_Morning_Flower.ogg 0 0 644 capabilities=0x0"
+        echo "system/media/audio/ringtones/SoundTheme/Galaxy/ACH_Morning_Glory.ogg 0 0 644 capabilities=0x0"
         echo "system/priv-app/EnvironmentAdaptiveDisplay 0 0 755 capabilities=0x0"
         echo "system/priv-app/EnvironmentAdaptiveDisplay/EnvironmentAdaptiveDisplay.apk 0 0 644 capabilities=0x0"
         echo "system/priv-app/SpriteWallpaper 0 0 755 capabilities=0x0"
